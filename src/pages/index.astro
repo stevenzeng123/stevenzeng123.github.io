@@ -1,17 +1,32 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Home | Your Name">
+  <section class="space-y-6">
+    <div class="space-y-2">
+      <h1 class="text-4xl font-bold tracking-tight">Hi, I’m Your Name.</h1>
+      <p class="text-zinc-300 max-w-2xl">
+        Tech-focused portfolio showcasing projects, experience, and writing.
+      </p>
+      <div class="flex gap-3 pt-2">
+        <a class="rounded-lg bg-white/10 px-4 py-2 text-sm hover:bg-white/20" href="/resume">View Resume</a>
+        <a class="rounded-lg border border-zinc-700 px-4 py-2 text-sm hover:bg-white/5" href="/blog/my-first-post">Read Blog</a>
+      </div>
+    </div>
+
+    <section class="pt-8">
+      <h2 class="text-xl font-semibold">Projects</h2>
+      <div class="mt-4 grid gap-4 sm:grid-cols-2">
+        <article class="rounded-xl border border-zinc-800 p-4">
+          <h3 class="font-semibold">Project One</h3>
+          <p class="mt-1 text-sm text-zinc-300">Short description of what you built.</p>
+        </article>
+        <article class="rounded-xl border border-zinc-800 p-4">
+          <h3 class="font-semibold">Project Two</h3>
+          <p class="mt-1 text-sm text-zinc-300">Short description of what you built.</p>
+        </article>
+      </div>
+    </section>
+  </section>
+</BaseLayout>

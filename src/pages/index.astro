@@ -2,30 +2,128 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Home | Your Name">
-  <section class="space-y-6">
-    <div class="space-y-2">
-      <h1 class="text-4xl font-bold tracking-tight">Hi, I’m Your Name.</h1>
-      <p class="text-zinc-300 max-w-2xl">
-        Tech-focused portfolio showcasing projects, experience, and writing.
-      </p>
-      <div class="flex gap-3 pt-2">
-        <a class="rounded-lg bg-white/10 px-4 py-2 text-sm hover:bg-white/20" href="/resume">View Resume</a>
-        <a class="rounded-lg border border-zinc-700 px-4 py-2 text-sm hover:bg-white/5" href="/blog/my-first-post">Read Blog</a>
+<BaseLayout title="Home | Steven Zeng">
+  <section class="space-y-14">
+    <!-- Hero -->
+    <section class="space-y-5">
+      <div class="space-y-2">
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Steven Zeng</h1>
+        <p class="max-w-2xl text-zinc-300 text-lg">
+          Tech-focused engineer with industry experience in full-stack development, AI/ML, and cybersecurity.
+        </p>
       </div>
-    </div>
 
-    <section class="pt-8">
-      <h2 class="text-xl font-semibold">Projects</h2>
-      <div class="mt-4 grid gap-4 sm:grid-cols-2">
-        <article class="rounded-xl border border-zinc-800 p-4">
-          <h3 class="font-semibold">Project One</h3>
-          <p class="mt-1 text-sm text-zinc-300">Short description of what you built.</p>
-        </article>
-        <article class="rounded-xl border border-zinc-800 p-4">
-          <h3 class="font-semibold">Project Two</h3>
-          <p class="mt-1 text-sm text-zinc-300">Short description of what you built.</p>
-        </article>
+      <div class="flex flex-wrap gap-3">
+        <a
+          href="/resume"
+          class="rounded-xl border border-blue-500/30 bg-blue-500/15 px-4 py-2 text-sm font-medium text-blue-200 hover:bg-blue-500/25 transition"
+        >
+          Resume
+        </a>
+        <a
+          href="mailto:"
+          class="rounded-xl border border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-200 hover:bg-white/5 transition"
+        >
+          Email
+        </a>
+        <a
+          href="#"
+          class="rounded-xl border border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-200 hover:bg-white/5 transition"
+        >
+          GitHub
+        </a>
+        <a
+          href="#"
+          class="rounded-xl border border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-200 hover:bg-white/5 transition"
+        >
+          LinkedIn
+        </a>
+      </div>
+
+      <p class="text-sm text-zinc-400">
+        Based in Northern VA 
+      </p>
+    </section>
+
+    <section class="space-y-4">
+  <h2 class="text-xl font-semibold">About</h2>
+
+  <div class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
+    <p class="max-w-3xl text-sm leading-7 text-zinc-300">
+      I’m a tech-focused developer interested in building reliable software systems,
+      improving engineering workflows through automation, and exploring security in
+      modern AI applications. My experience spans full-stack development, quality
+      assurance automation, and research on agentic RAG systems.
+    </p>
+  </div>
+</section>
+
+    <!-- What I Do -->
+    <section class="space-y-4">
+  <h2 class="text-xl font-semibold">What I do</h2>
+
+  <div class="grid gap-4 lg:grid-cols-3">
+    <article class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:bg-zinc-900/60 transition">
+      <h3 class="font-semibold">Full-stack development</h3>
+      <p class="mt-2 text-sm text-zinc-300 leading-relaxed">
+        Build and improve web applications with clean UI, backend logic, and data-driven functionality.
+        Comfortable working across the stack from implementation to delivery.
+      </p>
+
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="rounded-full border border-zinc-800 px-2.5 py-1 text-[11px] text-zinc-300">Flask</span>
+        <span class="rounded-full border border-zinc-800 px-2.5 py-1 text-[11px] text-zinc-300">PostgreSQL</span>
+        <span class="rounded-full border border-zinc-800 px-2.5 py-1 text-[11px] text-zinc-300">JavaScript</span>
+        <span class="rounded-full border border-zinc-800 px-2.5 py-1 text-[11px] text-zinc-300">HTML/CSS</span>
+      </div>
+    </article>
+
+    <article class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:bg-zinc-900/60 transition">
+      <h3 class="font-semibold">Automation & quality</h3>
+      <p class="mt-2 text-sm text-zinc-300 leading-relaxed">
+        Use test automation and CI workflows to improve software reliability, reduce manual effort,
+        and catch issues earlier in the development cycle.
+      </p>
+
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="rounded-full border border-zinc-800 px-2.5 py-1 text-[11px] text-zinc-300">Selenium</span>
+        <span class="rounded-full border border-zinc-800 px-2.5 py-1 text-[11px] text-zinc-300">Jenkins</span>
+        <span class="rounded-full border border-zinc-800 px-2.5 py-1 text-[11px] text-zinc-300">Jira</span>
+        <span class="rounded-full border border-zinc-800 px-2.5 py-1 text-[11px] text-zinc-300">SQL</span>
+      </div>
+    </article>
+
+    <article class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 hover:bg-zinc-900/60 transition">
+      <h3 class="font-semibold">AI & security research</h3>
+      <p class="mt-2 text-sm text-zinc-300 leading-relaxed">
+        Explore agentic RAG systems, retrieval pipelines, and adversarial testing to better understand
+        security risks in modern LLM applications.
+      </p>
+
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="rounded-full border border-zinc-800 px-2.5 py-1 text-[11px] text-zinc-300">LlamaIndex</span>
+        <span class="rounded-full border border-zinc-800 px-2.5 py-1 text-[11px] text-zinc-300">Chroma</span>
+        <span class="rounded-full border border-zinc-800 px-2.5 py-1 text-[11px] text-zinc-300">Ollama</span>
+        <span class="rounded-full border border-zinc-800 px-2.5 py-1 text-[11px] text-zinc-300">Gemini API</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+    <!-- Contact -->
+    <section class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
+      <h2 class="text-xl font-semibold">Contact</h2>
+      <p class="mt-2 text-sm text-zinc-300">
+        Feel free to reach out to me on LinkedIn.
+      </p>
+
+      <div class="mt-4 flex flex-wrap gap-3 text-sm">
+        <a
+          class="rounded-xl border border-blue-500/30 bg-blue-500/15 px-4 py-2 font-medium text-blue-200 hover:bg-blue-500/25 transition"
+          href="https://www.linkedin.com/in/steven-zeng1/"
+        >
+         LinkedIn
+        </a>
       </div>
     </section>
   </section>

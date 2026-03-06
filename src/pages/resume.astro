@@ -1,25 +1,173 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const experience = [
+  {
+  
+    role: "Undergraduate Researcher",
+    company: "Commonwealth Cyber Initiative (CCI)",
+    dates: "Jan 2025 – Present",
+    bullets: [
+      "Architected and implemented an agentic Retrieval-Augmented Generation (RAG) system using LlamaIndex for ingestion and orchestration, ChromaDB for vector search, and local/API-based LLM inference (Ollama, Gemini API)",
+      "Implemented structured planning and validation workflows using Gemini API to support multi-step agentic reasoning",
+      "Conducted security evaluations to assess robustness against prompt injection and retrieval-time poisoning attacks"
+    ],
+  },
+  {
+    role: "Software Engineer Intern",
+    company: "MITRE Corporation",
+    location: "McLean, VA",
+    dates: "May 2025 – Aug. 2025",
+    bullets: [
+      "Developed and deployed full-stack features (Flask, PostgreSQL, JavaScript) for a cybersecurity platform supporting 10+ federal sponsors",
+      "Optimized SQLAlchemy CRUD operations on a PostgreSQL database, reducing query latency by 40%.",
+      "Collaborated in Agile sprints; demoed sponsor-facing features and incorporated feedback into production releases"
+    ],
+  },
+  {
+    role: "Software Quality Assurance Intern",
+    company: "Global Science & Technology, Inc.",
+    location: "Arlington, VA",
+    dates: "May 2024 – Aug. 2024",
+    bullets: [
+      "Wrote and maintained 50+ Python Selenium WebDriver scripts, expanding automated test coverage on NASA’s NSPIRES system",
+      "Automated end-to-end testing and integrated suites into Jenkins CI/CD pipelines, reducing manual testing effort by 30%",
+      "Created SQL scripts to automate test data management in Oracle databases, streamlining test execution.",
+    ],
+  },
+];
+
+const certifications = [
+  {
+    name: "CompTIA Security+",
+    issuer: "CompTIA",
+    date: "2024-2027",
+    details: "Vendor-neutral cybersecurity certification covering risk management, network security, cryptography, identity management, and incident response.",
+  },
+  {
+    name: "ISC2 Certified in Cybersecurity (CC)",
+    issuer: "ISC2",
+    date: "2024-2027",
+    details: "Entry-level certification validating foundational knowledge in security principles, access controls, network security, and security operations.",
+  },
+];
+
+const skills = [
+  { label: "Languages", value: "Python, JavaScript, HTML/CSS, SQL, R" },
+  { label: "Libraries", value: "scikit-learn, PyTorch, pandas, NumPy, Matplotlib" },
+  { label: "Testing", value: "Selenium WebDriver, pytest, JUnit" },
+  { label: "Databases", value: "PostgreSQL, Oracle, SQLAlchemy" },
+  { label: "DevOps/Tools", value: "Git, Docker, Jenkins, Jira, Confluence" },
+];
 ---
 
-<BaseLayout title="Resume | Your Name">
-  <h1 class="text-3xl font-bold">Resume</h1>
+<BaseLayout title="Resume | Steven Zeng">
+  <section class="space-y-10">
+    <!-- Header -->
+    <header class="space-y-3">
+      <h1 class="text-3xl font-bold tracking-tight">Resume</h1>
+      <p class="max-w-2xl text-sm text-zinc-300">
+        Internship experience in full-stack development and test automation, with measurable impact on performance,
+        coverage, and delivery.
+      </p>
 
-  <section class="mt-6 space-y-6">
-    <div class="rounded-xl border border-zinc-800 p-5">
+      <div class="flex flex-wrap gap-3 text-sm">
+        <a
+          class="rounded-xl border border-blue-500/30 bg-blue-500/15 px-4 py-2 font-medium text-blue-200 hover:bg-blue-500/25 transition"
+          href="#"
+        >
+          Download PDF
+        </a>
+        <a class="text-blue-400 hover:text-blue-300 transition self-center" href="mailto:">
+          Email
+        </a>
+        <span class="text-zinc-600 self-center">·</span>
+        <a class="text-blue-400 hover:text-blue-300 transition self-center" href="#">
+          GitHub
+        </a>
+        <span class="text-zinc-600 self-center">·</span>
+        <a class="text-blue-400 hover:text-blue-300 transition self-center" href="https://www.linkedin.com/in/steven-zeng1/">
+          LinkedIn
+        </a>
+      </div>
+    </header>
+
+    <!-- Education -->
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold">Education</h2>
+      <div class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 text-sm text-zinc-300">
+        <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+          <div class="font-medium text-zinc-100">William & Mary</div>
+          <div class="text-zinc-400">Expected May 2026</div>
+        </div>
+        <div class="mt-1 text-zinc-400">B.S. in Computer Science</div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="space-y-4">
       <h2 class="text-lg font-semibold">Experience</h2>
-      <ul class="mt-3 space-y-3 text-sm text-zinc-300">
-        <li>
-          <div class="text-zinc-100 font-medium">Role — Company</div>
-          <div class="text-zinc-400">YYYY–YYYY</div>
-          <div>One or two impact bullets.</div>
-        </li>
-      </ul>
-    </div>
 
-    <div class="rounded-xl border border-zinc-800 p-5">
+      <div class="space-y-4">
+        {experience.map((e) => (
+          <article class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
+            <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+              <div class="font-semibold text-zinc-100">
+                {e.role} · <span class="text-zinc-300">{e.company}</span>
+              </div>
+              <div class="text-sm text-zinc-400">{e.dates}</div>
+            </div>
+
+            <div class="mt-1 text-sm text-zinc-400">{e.location}</div>
+
+            <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+              {e.bullets.map((b) => (
+                <li class="leading-relaxed">• {b}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+
+        <!-- Certifications -->
+    <section class="space-y-4">
+      <h2 class="text-lg font-semibold">Certifications</h2>
+
+      <div class="space-y-4">
+        {certifications.map((c) => (
+          <article class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
+            <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+              <div class="font-semibold text-zinc-100">
+                {c.name}
+                <span class="text-zinc-300"> · {c.issuer}</span>
+              </div>
+              <div class="text-sm text-zinc-400">{c.date}</div>
+            </div>
+
+            <p class="mt-3 text-sm text-zinc-300 leading-relaxed">
+              {c.details}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="space-y-4">
       <h2 class="text-lg font-semibold">Skills</h2>
-      <p class="mt-3 text-sm text-zinc-300">JavaScript, TypeScript, React, etc.</p>
-    </div>
+
+      <div class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
+        <dl class="grid gap-4 sm:grid-cols-2">
+          {skills.map((s) => (
+            <div>
+              <dt class="text-xs uppercase tracking-wide text-zinc-500">{s.label}</dt>
+              <dd class="mt-1 text-sm text-zinc-300">{s.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+
   </section>
 </BaseLayout>
